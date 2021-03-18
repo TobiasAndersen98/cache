@@ -27,8 +27,14 @@ public class MyController {
             return val;
         }
 
-
         return "/get-user-data";
+    }
+
+    @GetMapping("/delete")
+    @ResponseBody
+    public String deleteUserData(@RequestParam int id){
+        objCache.delete(id);
+        return "Your data has been deleted";
     }
 
 
